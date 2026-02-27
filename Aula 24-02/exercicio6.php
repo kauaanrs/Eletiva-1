@@ -14,7 +14,7 @@
         <form method="post">
             <div class="mb-3">
                 <label for="celsius" class="form-label">Digite uma temperatura em graus Celsius: </label>
-                <input type="number" id="celsius" name="celsius" class="form-control" required="">
+                <input type="number" step="any" id="celsius" name="celsius" class="form-control" required="">
             </div>
             <button type="submit" class="btn btn-primary">Enviar</button>
         </form>

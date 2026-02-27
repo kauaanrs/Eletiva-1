@@ -14,13 +14,13 @@
         <form method="post">
             <div class="mb-3">
                 <label for="far" class="form-label">Digite uma temperatura em graus Fahrenheit: </label>
-                <input type="number" id="far" name="far" class="form-control" required="">
+                <input type="number"step="any" id="far" name="far" class="form-control" required="">
             </div>
             <button type="submit" class="btn btn-primary">Enviar</button>
         </form>
         <?php
             if($_SERVER['REQUEST_METHOD'] == 'POST'){
-                $celsius = $_POST['far'];
+                $far = $_POST['far'];
                 $celsius = ($far - 32) / 1.8;
                 echo "Essa temperatura em Celsius é: $celsius";
             }
