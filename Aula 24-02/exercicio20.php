@@ -4,33 +4,30 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Exercicio 19</title>
+    <title>Exercicio 20</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
 </head>
 
 <body>
     <div class="container py-3">
-        <h1>Exercicio 19</h1>
+        <h1>Exercicio 20</h1>
         <form method="post">
             <div class="mb-3">
-                <label for="dias" class="form-label">Insira a quantidade de dias: </label>
-                <input type="number" step="any" id="dias" name="dias" class="form-control" required="">
+                <label for="distancia" class="form-label">Insira uma distância em km: </label>
+                <input type="number" step="any" id="distancia" name="distancia" class="form-control" required="">
+            </div>
+            <div class="mb-3">
+                <label for="tempo" class="form-label">Inserir o tempo de viagem em horas: </label>
+                <input type="number" step="any" id="tempo" name="tempo" class="form-control" required="">
             </div>
             <button type="submit" class="btn btn-primary">Enviar</button>
         </form>
         <?php
             if($_SERVER["REQUEST_METHOD"] == "POST"){
-                $dias = $_POST["dias"];
-                if($dias < 0){
-                    echo "Valor inválido para cálculo !";
-                }
-                else{
-                    $horas = $dias * 24;
-                    $minutos = $horas * 60;
-                    $segundos = $minutos * 60;
-                    echo "\nHoras: $horas \nMinutos: $minutos \nSegundos: $segundos";
-                }
-
+                $distancia = $_POST["distancia"];
+                $tempo = $_POST["tempo"];
+                $velocidadeMedia = $distancia / $tempo;
+                echo "A velocidade média é de ".number_format($velocidadeMedia, 2, ",", ".")."km/h";
             }
         
         ?>
