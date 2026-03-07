@@ -22,7 +22,8 @@
             if($_SERVER["REQUEST_METHOD"] == "POST"){
                 $valor = $_POST['valor'];
                 if ($valor > 100){
-                    
+                    $novoValor = $valor - $valor * 0.15;
+                    echo "Valor com desconto: R$".number_format($novoValor,2,",",".");
                 }
             }
         
