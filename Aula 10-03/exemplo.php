@@ -19,7 +19,7 @@
     }
     else{
         echo "<p>Nome não informado</p>";
-        die();
+        die();  
     }
 
     if (is_float($valor)){
