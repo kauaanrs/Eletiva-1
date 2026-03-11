@@ -56,6 +56,7 @@
                 $maior_num = $num1; 
                 $posicao = $contador;
                 while ($contador <= 7){
+                    $contador++;
                     if ($maior_num < $num2){
                         $maior_num = $num2;
                         $posicao = $contador;
@@ -86,6 +87,7 @@
                         $posicao = $contador;
                     }
                 }
+                echo "<p>O maior número é $maior_num e se encontra na posição $posicao !</p>";
             }
         
         
