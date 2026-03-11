@@ -18,7 +18,17 @@
             </div>
             <button type="submit" class="btn btn-primary">Enviar</button>
         </form>
+        <?php
+            if($_SERVER['REQUEST_METHOD'] == 'POST'){
+                $num = $_POST['num'];
+                for ($i=1; $i <= 10; $i++){
+                    $resultado = $num * $i; 
+                    echo "<p>$num * $i = $resultado</p>";
+                }
+            }
         
+        
+        ?>
 
 
 
