@@ -21,7 +21,7 @@
         <?php
             if($_SERVER["REQUEST_METHOD"] == "POST"){
                 $palavra = $_POST["palavra"];
-                echo "A quantidade de vogais nessa palavra é: ". preg_match_all('/[aeiou]/i', $palavra, $vogais);
+                echo "<p>A quantidade de vogais nessa palavra é: ". preg_match_all('/[aeiou]/i', $palavra, $vogais). "</p>";
 
             }
         
