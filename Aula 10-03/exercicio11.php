@@ -21,7 +21,7 @@
         <?php
             if($_SERVER['REQUEST_METHOD'] == 'POST'){
                 $valor = $_POST['valor'];
-                
+                echo "R$".number_format($valor, 2, ",", ".");
             }
         
         
