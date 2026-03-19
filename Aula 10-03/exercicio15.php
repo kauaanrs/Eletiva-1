@@ -4,30 +4,21 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Exercicio 14</title>
+    <title>Exercicio 15</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
 </head>
 
 <body>
     <div class="container py-3">
-        <h1>Exercicio 14</h1>
+        <h1>Exercicio 15</h1>
         <form method="post">
             <div class="mb-3">
-                <label for="palavra" class="form-label">Digite uma palavra</label>
-                <input type="text" id="palavra" name="palavra" class="form-control" required="">
+                <label for="palavra" class="form-label">Digite um email</label>
+                <input type="text" id="email" name="email" class="form-control" required="">
             </div>
             <button type="submit" class="btn btn-primary">Enviar</button>
         </form>
-        <?php
-            if($_SERVER['REQUEST_METHOD'] == 'POST'){
-                $palavra = $_POST['palavra'];
-                if($palavra == strrev($palavra))
-                    echo "<p>$palavra é um palíndromo</p>";
-                else
-                    echo "<p>$palavra não é um palíndromo</p>";
-            }
         
-        ?>
 
 
 
