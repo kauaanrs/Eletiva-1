@@ -21,9 +21,15 @@
         <?php
             if($_SERVER['REQUEST_METHOD'] == 'POST'){
                 $frase = $_POST['frase'];
-                $qtdPalavras = str_word_count($frase);
+                $palavras = str_word_count($frase, 1);
+                $qtdPalavras = count($palavras);
                 $maiorPalavra = '';
-                if ($)
+                foreach ($palavras as $palavra){
+                    if(strlen($palavra) > strlen($maiorPalavra))
+                        $maiorPalavra = $palavra;
+                }
+                echo "<p>$maiorPalavra</p>";
+                echo "<p>$qtdPalavras</p>";
             }
         
         
