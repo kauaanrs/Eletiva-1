@@ -28,8 +28,8 @@
                     if(strlen($palavra) > strlen($maiorPalavra))
                         $maiorPalavra = $palavra;
                 }
-                echo "<p>$maiorPalavra</p>";
-                echo "<p>$qtdPalavras</p>";
+                echo "<p>Maior palavra: $maiorPalavra</p>";
+                echo "<p>quantidade de palavras: $qtdPalavras</p>";
             }
         
         
