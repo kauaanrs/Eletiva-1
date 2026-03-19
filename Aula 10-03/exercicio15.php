@@ -18,7 +18,15 @@
             </div>
             <button type="submit" class="btn btn-primary">Enviar</button>
         </form>
+        <?php
+            if($_SERVER['REQUEST_METHOD'] == 'POST'){
+                $email = $_POST['email'];
+                echo "<p>Domínio do email $email é: ".strrchr($email, "@")."</p>";
+            }
         
+        
+        
+        ?>
 
 
 
