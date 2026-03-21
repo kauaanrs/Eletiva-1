@@ -32,8 +32,11 @@
                 $mes = $_POST['mes'];
                 $ano = $_POST['ano'];
 
-                if (checkdate($dia, $mes, $ano)){
-                    
+                if (checkdate($mes, $dia, $ano)){
+                    $diaFormatado = str_pad($dia, 2, "0", STR_PAD_LEFT);
+                    $mesFormatado = str_pad($mes, 2, "0", STR_PAD_LEFT);
+                    $anoFormatado = str_pad($ano, 4, "0", STR_PAD_LEFT);
+                    echo "$diaFormatado/$mesFormatado/$anoFormatado";
                 }
                 else
                     echo "Data inválida !";
