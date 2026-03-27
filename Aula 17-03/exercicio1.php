@@ -20,7 +20,7 @@
                 <label for="tel1" class="form-label">Digite o número de telefone: </label>
                 <input type="number" id="tel1" name="tel1" class="form-control" required="">
             </div>
-                        <div class="mb-3">
+                <div class="mb-3">
                 <label for="nome2" class="form-label">Digite o nome do contato: </label>
                 <input type="text" id="nome2" name="nome2" class="form-control" required="">
             </div>
@@ -69,7 +69,7 @@
 
                 for ($i = 0; $i < 5; $i++){
                     if(array_key_exists($nome[$i], $contatos) || in_array($telefone[$i], $verificaTel)){
-                        echo "<p>Nome duplicado</p>";  
+                        echo "<p>Nome duplicado ou telefone duplicado</p>";  
                     }
                     else{
                         $contatos[$nome[$i]] = $telefone[$i];
@@ -77,6 +77,7 @@
                     }                  
                 }
                 ksort($contatos);
+                echo "<p>Nomes adicionados a lista: </p>";
                 foreach($contatos as $chave => $valor){
                     echo "<p>Contato: $chave \tTelefone: $valor</p>";
                 } 
