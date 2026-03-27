@@ -86,26 +86,27 @@
         <?php
             if($_SERVER['REQUEST_METHOD'] == 'POST'){
                 $produtos = [];
-                $nomesValores = [];
                 for($i = 1; $i < 6; $i++){
-                    $nomes[] = $_POST["nome$i"];
-                    $codigos[] = $_POST["codigo$i"];
-                    $precos[] = $_POST["preco$i"]; 
+                    $nome = $_POST["nome$i"];
+                    $codigo = $_POST["codigo$i"];
+                    $preco = $_POST["preco$i"]; 
 
-                    $nomesValores[$nomes] = $precos;
-                    $produtos[$codigos] = $nomesValores; 
-                }
-                foreach($produtos as $codigos => $nomesValores){
-                    echo "<p>Produto: $codigos - $nomesValores</p>";
+                    if($preco > 100){
+                        $preco = $preco * 0.9; 
+                    }
+
+                    $produtos[$codigo] = ["nome" => $nome, "preco" => $preco];
                 }
 
+                uasort($produtos, function ($a, $b) {
+                    return strcmp($a["nome"], $b["nome"]);
+                });
+
+                foreach($produtos as $codigo => $dados){
+                    echo "<p>Código: $codigo - Nome: ".$dados['nome']." - Preço: R$".number_format($dados['preco'], 2, ',','.')."</p>";
+                }
             }
-        
-        
         ?>
-
-
-
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.bundle.min.js" integrity="sha384-j1CDi7MgGQ12Z7Qab0qlWQ/Qqz24Gc6BM0thvEMVjHnfYGF0rmFCozFSxQBxwHKO" crossorigin="anonymous"></script>
     </div>
 </body>
