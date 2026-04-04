@@ -9,11 +9,11 @@
 <body>
     <div class="container mt-4">
         <div class="row justify-content-center">
-            <div class="col-md-6">
+            <div class="col-md-6 p-4 border rounded bg-light">
 
                 <h3 class="mb-4">Billing address</h3>
 
-                <form class="p-4 border rounded bg-light">
+                <form>
                     <div class="row mb-3">
                         <div class="col-md-6">
                             <label for="firstName" class="form-label">First name</label>
