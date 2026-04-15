@@ -30,6 +30,8 @@
       require_once('conexao.php');
       session_start();
       if ($_SERVER['REQUEST_METHOD'] == 'POST'){
+        $email = $_POST['email'];
+        $senha = $_POST['senha'];
         try{
           $stmt = $pdo->prepare("SELECT * FROM usuario WHERE email = ?");
           $stmt->execute([$email]);
@@ -49,7 +51,7 @@
     ?>
 
     <p class="text-center mt-3">
-      Não tem conta? <a href="cadastro.html">Cadastre-se</a>
+      Não tem conta? <a href="cadastro.php">Cadastre-se</a>
     </p>
   </div>
 </div>
