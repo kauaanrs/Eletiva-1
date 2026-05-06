@@ -6,9 +6,11 @@
     <form method="post">
         <div class="mb-3">
               <label for="nome" class="form-label">Informe o nome</label>
-              <input type="text" id="nome" name="nome" class="form-control" required="">
+              <input type="text" id="nome" name="nome" class="form-control">
         </div>
         <button type="submit" class="btn btn-primary">Enviar</button>
+        <a href="categorias.php"><button  class="btn btn-primary">Voltar</button></a>
+
     </form>
     <?php
       if($_SERVER['REQUEST_METHOD'] == 'POST'){
@@ -26,6 +28,6 @@
         }
       }
     ?>
-
+    
 <?php
     require_once('rodape.php');
